@@ -1,0 +1,30 @@
+.desktop-navigation {
+    background-color: #ffffff;
+    box-shadow: #cbc4d1 0px 1px 8px 1px;
+    border-radius: 0px;
+    height: 30px;
+    padding: 10px;
+    color: $text-color;
+}
+.mobile-navigation {
+    border: solid 3px green;
+}
+.nav {
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+.nav-item {
+    color: #1f1653;
+    font-size: 12px;
+    margin: 10px;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+    color: $text-link;
+}
+a:hover {
+    color: $text-link-hover;
+}

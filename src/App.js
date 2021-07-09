@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+//import base files
+import './App.scss';
+
+//import components
+import Nav from './components/nav.js';
+
+//import images
+import tea from './assets/img/tea_icon.png';
+
+//import assets
+import './assets/scss/base.scss';
+
+import PageRenderer from './page-renderer';
+
+// import react router
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+
+
+//
+//
+//
+//
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+
+      <div className="app-container">
+
+        <Nav/>
+
+        <div className="app-body">
+
+          <Switch>
+            <Route path="/:page" component={PageRenderer} />
+            <Route path="/" render={() => <Redirect to="/home" />} />
+            <Route component={() => 404} />
+          </Switch>
+
+          <img src={tea} className="" alt="logo" style={{ width: `200px`, }} />
+          
+        </div>
+
+      </div>
+
+    </Router>
   );
 }
 
